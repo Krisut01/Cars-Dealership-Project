@@ -1,0 +1,98 @@
+name: Django CI/CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      # PostgreSQL service (optional, since we're using SQLite)
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        cd server
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install django-cors-headers djangorestframework
+
+    - name: Run migrations
+      run: |
+        cd server
+        python manage.py migrate
+
+    - name: Run tests
+      run: |
+        cd server
+        python manage.py test
+
+    - name: Build React Frontend
+      run: |
+        cd server/frontend
+        npm install
+        npm run build
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        cd server
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install django-cors-headers djangorestframework
+
+    - name: Run migrations
+      run: |
+        cd server
+        python manage.py migrate
+
+    - name: Build React Frontend
+      run: |
+        cd server/frontend
+        npm install
+        npm run build
+
+    - name: Deploy to IBM Cloud Code Engine
+      uses: IBM/code-engine-action@v1
+      with:
+        ibmcloud_api_key: ${{ secrets.IBMCLOUD_API_KEY }}
+        resource_group: ${{ secrets.IBMCLOUD_RESOURCE_GROUP }}
+        region: ${{ secrets.IBMCLOUD_REGION }}
+        project: cars-dealership
+        app_name: cars-dealership-app
+        image_registry: ${{ secrets.DOCKER_REGISTRY }}
+        image_name: cars-dealership
+        source_directory: server
+        dockerfile: Dockerfile
