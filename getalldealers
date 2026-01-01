@@ -1,35 +1,38 @@
-curl -X GET http://localhost:8000/api/dealers/
+curl -X GET http://localhost:8000/fetchDealers/
 
 Response:
 [
   {
     "id": 1,
-    "name": "Premium Auto Dealership",
-    "address": "123 Main Street",
     "city": "Anytown",
     "state": "California",
-    "zip_code": "12345",
-    "phone": "(555) 123-4567",
-    "website": "https://premiumauto.com"
+    "address": "123 Main Street",
+    "zip": "12345",
+    "lat": 37.7749,
+    "long": -122.4194,
+    "short_name": "Premium",
+    "full_name": "Premium Auto Dealership"
   },
   {
     "id": 2,
-    "name": "City Motors",
-    "address": "456 Oak Avenue",
     "city": "Springfield",
     "state": "Kansas",
-    "zip_code": "67890",
-    "phone": "(555) 987-6543",
-    "website": "https://citymotors.com"
+    "address": "456 Oak Avenue",
+    "zip": "67890",
+    "lat": 40.7128,
+    "long": -74.0060,
+    "short_name": "City",
+    "full_name": "City Motors"
   },
   {
     "id": 3,
-    "name": "Elite Cars",
-    "address": "789 Pine Road",
     "city": "Riverside",
     "state": "California",
-    "zip_code": "54321",
-    "phone": "(555) 456-7890",
-    "website": "https://elitecars.com"
+    "address": "789 Pine Road",
+    "zip": "54321",
+    "lat": 34.0522,
+    "long": -118.2437,
+    "short_name": "Elite",
+    "full_name": "Elite Cars"
   }
 ]

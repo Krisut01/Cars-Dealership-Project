@@ -1,65 +1,55 @@
-curl -X GET http://localhost:8000/api/dealers/makes/
+curl -X GET http://localhost:8000/djangoapp/get_cars/
 
 Response:
-[
-  {
-    "id": 1,
-    "name": "Toyota",
-    "models": [
-      {"id": 1, "name": "Camry"},
-      {"id": 2, "name": "Corolla"},
-      {"id": 3, "name": "RAV4"},
-      {"id": 4, "name": "Highlander"}
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Honda",
-    "models": [
-      {"id": 5, "name": "Civic"},
-      {"id": 6, "name": "Accord"},
-      {"id": 7, "name": "CR-V"},
-      {"id": 8, "name": "Pilot"}
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Ford",
-    "models": [
-      {"id": 9, "name": "F-150"},
-      {"id": 10, "name": "Mustang"},
-      {"id": 11, "name": "Explorer"},
-      {"id": 12, "name": "Focus"}
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Chevrolet",
-    "models": [
-      {"id": 13, "name": "Silverado"},
-      {"id": 14, "name": "Malibu"},
-      {"id": 15, "name": "Equinox"},
-      {"id": 16, "name": "Tahoe"}
-    ]
-  },
-  {
-    "id": 5,
-    "name": "BMW",
-    "models": [
-      {"id": 17, "name": "3 Series"},
-      {"id": 18, "name": "5 Series"},
-      {"id": 19, "name": "X3"},
-      {"id": 20, "name": "X5"}
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Mercedes-Benz",
-    "models": [
-      {"id": 21, "name": "C-Class"},
-      {"id": 22, "name": "E-Class"},
-      {"id": 23, "name": "GLC"},
-      {"id": 24, "name": "GLE"}
-    ]
-  }
-]
+{
+  "CarModels": [
+    {
+      "CarMake": "Toyota",
+      "CarModel": "Camry"
+    },
+    {
+      "CarMake": "Toyota",
+      "CarModel": "Corolla"
+    },
+    {
+      "CarMake": "Honda",
+      "CarModel": "Civic"
+    },
+    {
+      "CarMake": "Honda",
+      "CarModel": "Accord"
+    },
+    {
+      "CarMake": "Ford",
+      "CarModel": "F-150"
+    },
+    {
+      "CarMake": "Ford",
+      "CarModel": "Mustang"
+    },
+    {
+      "CarMake": "Chevrolet",
+      "CarModel": "Silverado"
+    },
+    {
+      "CarMake": "Chevrolet",
+      "CarModel": "Malibu"
+    },
+    {
+      "CarMake": "BMW",
+      "CarModel": "3 Series"
+    },
+    {
+      "CarMake": "BMW",
+      "CarModel": "5 Series"
+    },
+    {
+      "CarMake": "Mercedes-Benz",
+      "CarModel": "C-Class"
+    },
+    {
+      "CarMake": "Mercedes-Benz",
+      "CarModel": "E-Class"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-# Cars Dealership Full-Stack Application
+# Full-Stack Developer Capstone Project
 
 ## Project Overview
 
-This is a comprehensive full-stack web application for Cars Dealership, a national car retailer in the U.S. The application allows users to view dealership branches, read and submit reviews for dealerships, and interact with a responsive web interface.
+This is the xrwvm-fullstack_developer_capstone project - a comprehensive full-stack web application for Cars Dealership, a national car retailer in the U.S. The application allows users to view dealership branches, read and submit reviews for dealerships, and interact with a responsive web interface.
 
 ## Technology Stack
 
