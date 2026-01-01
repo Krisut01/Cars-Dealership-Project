@@ -1,0 +1,11 @@
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'C:\Subjects 2024\4thYr\RANDOM\Coursera\tasks\server\frontend\build' in the STATICFILES_DIRS setting does not exist.
+?: (staticfiles.W004) The directory 'C:\Subjects 2024\4thYr\RANDOM\Coursera\tasks\server\frontend\build\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 2 issues (0 silenced).
+September 25, 2024 - 10:30:15
+Django version 5.2.9, using settings 'server.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.

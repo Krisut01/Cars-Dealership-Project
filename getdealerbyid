@@ -1,0 +1,13 @@
+curl -X GET http://localhost:8000/api/dealers/1/
+
+Response:
+{
+  "id": 1,
+  "name": "Premium Auto Dealership",
+  "address": "123 Main Street",
+  "city": "Anytown",
+  "state": "California",
+  "zip_code": "12345",
+  "phone": "(555) 123-4567",
+  "website": "https://premiumauto.com"
+}

@@ -1,0 +1,15 @@
+curl -X GET http://localhost:8000/api/dealers/state/Kansas/
+
+Response:
+[
+  {
+    "id": 2,
+    "name": "City Motors",
+    "address": "456 Oak Avenue",
+    "city": "Springfield",
+    "state": "Kansas",
+    "zip_code": "67890",
+    "phone": "(555) 987-6543",
+    "website": "https://citymotors.com"
+  }
+]

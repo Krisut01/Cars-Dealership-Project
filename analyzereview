@@ -1,0 +1,9 @@
+curl -X POST http://localhost:8000/api/reviews/analyze/ \
+  -H "Content-Type: application/json" \
+  -d '{"text":"Fantastic services"}'
+
+Response:
+{
+  "text": "Fantastic services",
+  "sentiment": "positive"
+}

@@ -1,0 +1,17 @@
+curl -X GET http://localhost:8000/api/reviews/dealer/1/
+
+Response:
+[
+  {
+    "id": 1,
+    "user": "testuser",
+    "review_text": "Great service and friendly staff!",
+    "purchase": true,
+    "purchase_date": null,
+    "car_make": "Toyota",
+    "car_model": "Camry",
+    "car_year": 2020,
+    "sentiment": null,
+    "created_at": "2024-09-25T10:30:00Z"
+  }
+]
